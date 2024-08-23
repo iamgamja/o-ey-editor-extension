@@ -1,6 +1,6 @@
 export default defineContentScript({
-  matches: ['*://*.google.com/*'],
+  matches: ['*://acmicpc.net/problem/*'],
   main() {
-    console.log('Hello content.');
+    console.log(browser)
   },
-});
+})
