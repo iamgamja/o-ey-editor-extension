@@ -1,6 +1,6 @@
 {
-  "name": "wxt-starter",
-  "description": "manifest.json description",
+  "name": "o-ey-editor-extension",
+  "description": "BOJ에서 바로 o-ey 번역을 할 수 있게 하는 확장입니다.",
   "private": true,
   "version": "0.0.0",
   "type": "module",
