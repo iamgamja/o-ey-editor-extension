@@ -2,7 +2,7 @@
 BOJ에서 바로 [o-ey](https://github.com/kiwiyou/o-ey) 번역을 할 수 있게 하는 확장입니다.
 
 ## 설치
-[Releases](https://github.com/iamgamja/o-ey-editor-extension/releases/tag/v1.0.0)에서 브라우즈에 맞는 zip 파일을 다운받아 설치해주세요.
+[Releases](https://github.com/iamgamja/o-ey-editor-extension/releases)에서 브라우즈에 맞는 zip 파일을 다운받아 설치해주세요.
 
 ## 사용법
 ![](/docs/usage1.jpg)
