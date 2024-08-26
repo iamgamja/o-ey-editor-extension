@@ -46,7 +46,7 @@ function initEditor() {
   
   html_push('</section>\n')
 
-  const childs = body.querySelectorAll('section.problem-section:not([style="display:none;"])')
+  const childs = body.querySelectorAll('section.problem-section:not([style])')
   for (const section of childs) {
     html_push(`<section id="${section.id}">`)
     ;[...section.children].forEach(parse)
