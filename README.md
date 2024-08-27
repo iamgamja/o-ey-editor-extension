@@ -1,4 +1,10 @@
 # o-ey-editor-extension
+<div align="center">
+
+  ![](/docs/128.png)
+
+</div>
+
 BOJ에서 바로 [o-ey](https://github.com/kiwiyou/o-ey) 번역을 할 수 있게 하는 확장입니다.
 
 ## 설치
