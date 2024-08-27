@@ -3,3 +3,7 @@
   font-family: Menlo, Monaco, 'Source Code Pro', consolas, monospace !important;
 }
 
+.oey-preview {
+  margin: 2rem 0;
+  background: #eee;
+}

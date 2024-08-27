@@ -7,16 +7,20 @@ function isTextarea(ele: Element) {
 }
 
 export default function insertForm({htmls, idx, value, ele}: {htmls: string[], idx: number, value: string, ele: Element}) {
-  const form = isTextarea(ele)  ? document.createElement('textarea') : document.createElement('input')
-  
+  const form = isTextarea(ele) ? document.createElement('textarea') : document.createElement('input')
   form.classList.add('oey-form', 'form-control')
-  
   form.value = value
+
+  const preview = document.createElement('div')
+  preview.classList.add('oey-preview')
+  preview.innerHTML = value
+  
   form.addEventListener('change', () => {
     htmls[idx] = form.value
+    preview.innerHTML = form.value
   })
 
-  ele.after(form)
+  ele.after(preview, form)
 
   if (isTextarea(ele)) {
     function autoHeight() {
