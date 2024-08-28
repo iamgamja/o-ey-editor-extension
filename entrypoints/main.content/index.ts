@@ -79,6 +79,6 @@ export default defineContentScript({
     menu.appendChild(li)
 
     // event listner 추가
-    a.addEventListener('click', initEditor)
+    a.addEventListener('click', initEditor, { once: true })
   },
 })
