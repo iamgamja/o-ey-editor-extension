@@ -15,7 +15,7 @@ export default function insertForm({htmls, idx, value, ele}: {htmls: string[], i
   preview.classList.add('oey-preview')
   preview.innerHTML = value
   
-  form.addEventListener('change', () => {
+  form.addEventListener('input', () => {
     htmls[idx] = form.value
     preview.innerHTML = form.value
   })
