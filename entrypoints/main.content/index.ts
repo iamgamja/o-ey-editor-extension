@@ -62,6 +62,9 @@ function initEditor() {
   btn.addEventListener('click', async () => {
     await navigator.clipboard.writeText(htmls.join(''))
     btn.textContent = '복사됨'
+    setTimeout(() => {
+      btn.textContent = '번역 html 복사'
+    }, 3000)
   })
 }
 
