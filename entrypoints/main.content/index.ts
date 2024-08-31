@@ -68,6 +68,12 @@ function initEditor() {
 export default defineContentScript({
   matches: ['*://*.acmicpc.net/problem/*'],
   async main() {
+    // MathJax render 스크립트 주입
+    const script = document.createElement('script')
+    script.src = browser.runtime.getURL('/render_mathjax.js')
+    ;(document.head || document.documentElement).appendChild(script)
+    script.addEventListener('load', script.remove)
+
     // '번역하기' 버튼 추가
     const menu = document.querySelector('.problem-menu')
     if (!menu) throw new Error('element not found: `.problem-menu`')
