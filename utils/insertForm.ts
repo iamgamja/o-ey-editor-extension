@@ -1,3 +1,5 @@
+import { htmls } from '@/utils/htmls'
+
 function render_mathjax() {
   document.dispatchEvent(new CustomEvent('oeyeditor_render_mathjax'))
 }
@@ -10,23 +12,23 @@ function isTextarea(ele: Element) {
   return true
 }
 
-export default function insertForm({htmls, idx, value, ele}: {htmls: string[], idx: number, value: string, ele: Element}) {
-  const form = isTextarea(ele) ? document.createElement('textarea') : document.createElement('input')
-  form.classList.add('oey-form', 'form-control')
+export default function insertForm({idx, value, ele}: {idx: number, value: string, ele: Element}) {
+  const form = document.createElement(isTextarea(ele) ? 'textarea' : 'input')
+  form.classList.add('oeyeditor-form', 'form-control')
   form.value = value
 
   const preview = document.createElement('div')
-  preview.classList.add('oey-preview')
+  preview.classList.add('oeyeditor-preview')
   preview.innerHTML = value
+
+  ele.after(preview, form)
+  render_mathjax()
   
   form.addEventListener('input', () => {
     htmls[idx] = form.value
     preview.innerHTML = form.value
     render_mathjax()
   })
-
-  ele.after(preview, form)
-  render_mathjax()
 
   if (isTextarea(ele)) {
     function autoHeight() {
