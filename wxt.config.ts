@@ -8,6 +8,10 @@ export default defineConfig({
         'matches': ['*://*.acmicpc.net/*'],
         'resources': ['render_mathjax.js']
       }
+    ],
+    'permissions': [ 'storage' ],
+    'host_permissions': [
+      'https://api.github.com/'
     ]
   }
 })
