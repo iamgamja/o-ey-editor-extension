@@ -1,7 +1,10 @@
 import { htmls } from '@/utils/htmls'
 
-function render_mathjax() {
-  document.dispatchEvent(new CustomEvent('oeyeditor_render_mathjax'))
+function render_mathjax(selector: string) {
+  const e = new CustomEvent('oeyeditor_render_mathjax', {
+    detail: selector
+  })
+  document.dispatchEvent(e)
 }
 
 function isTextarea(ele: Element) {
@@ -18,16 +21,16 @@ export default function insertForm({idx, value, ele}: {idx: number, value: strin
   form.value = value
 
   const preview = document.createElement('div')
-  preview.classList.add('oeyeditor-preview')
+  preview.classList.add('oeyeditor-preview', `otyeditor-previewid-${idx}`)
   preview.innerHTML = value
 
   ele.after(preview, form)
-  render_mathjax()
+  render_mathjax(`.otyeditor-previewid-${idx}`)
   
   form.addEventListener('input', () => {
     htmls[idx] = form.value
     preview.innerHTML = form.value
-    render_mathjax()
+    render_mathjax(`.otyeditor-previewid-${idx}`)
   })
 
   if (isTextarea(ele)) {
